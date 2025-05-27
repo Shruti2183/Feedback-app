@@ -1,0 +1,21 @@
+<h2>Admin Dashboard</h2>
+<table>
+  <tr>
+    <th>User</th>
+    <th>Feedback</th>
+    <th>Actions</th>
+  </tr>
+  <% feedbacks.forEach(f => { %>
+    <tr>
+      <td><%= f.userId.username %></td>
+      <td><%= f.content %></td>
+      <td>
+        <a href="/admin/edit/<%= f._id %>">Edit</a>
+        <form action="/admin/<%= f._id %>?_method=DELETE" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+</table>
+<a href="/logout">Logout</a>

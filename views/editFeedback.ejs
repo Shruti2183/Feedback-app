@@ -1,0 +1,6 @@
+<h2>Edit Feedback for <%= feedback.userId.username %></h2>
+<form action="/admin/<%= feedback._id %>?_method=PUT" method="POST">
+  <textarea name="content"><%= feedback.content %></textarea>
+  <button type="submit">Update</button>
+</form>
+<a href="/admin">Back to Admin</a>

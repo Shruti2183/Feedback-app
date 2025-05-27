@@ -1,0 +1,13 @@
+<h2>Feedback Page</h2>
+<% if (feedback) { %>
+  <form action="/feedback?_method=PUT" method="POST">
+    <textarea name="content"><%= feedback.content %></textarea>
+    <button type="submit">Update Feedback</button>
+  </form>
+<% } else { %>
+  <form action="/feedback" method="POST">
+    <textarea name="content"></textarea>
+    <button type="submit">Submit Feedback</button>
+  </form>
+<% } %>
+<!-- <a href="/logout">Logout</a> -->
